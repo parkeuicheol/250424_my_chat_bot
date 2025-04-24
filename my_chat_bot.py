@@ -3,8 +3,8 @@ import google.generativeai as genai
 import streamlit as st
 
 # ——— 사전에 설정해 둔 유효한 계정 정보(환경변수) ———
-VALID_USER_ID = os.getenv("STREAMLIT_USER_ID", "admin")
-VALID_PASSWORD = os.getenv("STREAMLIT_USER_PW", "secret")
+VALID_USER_ID = os.getenv("STREAMLIT_USER_ID", "sfteam")
+VALID_PASSWORD = os.getenv("STREAMLIT_USER_PW", "css0025248#")
 
 # ——— 로그인 상태 초기화 ———
 if "authenticated" not in st.session_state:
@@ -36,7 +36,7 @@ st.title("나만의 Chatbot(feat.Gemini)")
 
 @st.cache_resource
 def load_model():
-    model = genai.GenerativeModel('gemini-2.5-flash-preview-04-17')
+    model = genai.GenerativeModel('gemini-2.0-flash')
     return model
 
 model = load_model()
